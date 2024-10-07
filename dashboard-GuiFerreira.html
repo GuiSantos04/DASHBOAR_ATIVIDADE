@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div style="display: flex; justify-content: center;">
+      <h1 style="font-family:'Courier New', Courier, monospace;">Dashboard Guilherme Ferreira</h1>
+    </div>
+    <div style="display: flex; ">
+      <div style="display: flex; width: 50%;">
+          <canvas  id="Espaco1"></canvas>
+          <canvas id="Espaco2"></canvas>
+      </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    const canva1 = document.getElementById('Espaco1');
+    const canva2 = document.getElementById('Espaco2');
+
+    new Chart(canva1, {
+      type: 'line',
+      data: {
+        labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+        datasets: [{
+          label: 'Temperatura',
+          data: [30, 29, 28, 25, 22, 23],
+          borderWidth: 1,
+          borderColor: 'red',
+          backgroundColor: 'red'
+        },
+        {
+          label: 'Umidade',
+          data: [80, 82, 80, 85, 80, 83],
+          borderWidth: 1,
+          borderColor: 'purple',
+          backgroundColor: 'purple'
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    })
+
+    new Chart(canva2, {
+      type: 'bar',
+      data: {
+        labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+        datasets: [{
+          label: 'Temperatura média',
+          data: [22, 24, 27, 23, 20, 18],
+          borderWidth: 1,
+          borderColor: 'red',
+          backgroundColor: 'red'
+        },
+        {
+          label: 'Umidade média',
+          data: [90, 89, 93, 87, 88, 82],
+          borderWidth: 1,
+          borderColor: 'purple',
+          backgroundColor: 'purple'
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    }
+);
+  </script>
